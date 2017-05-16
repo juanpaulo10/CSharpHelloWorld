@@ -1,0 +1,8 @@
+c:\Users\Del\Documents\Programming Codes\CSharp\CSharpHelloWorld\bin\Debug\netcoreapp1.1\CSharpHelloWorld.deps.json
+c:\Users\Del\Documents\Programming Codes\CSharp\CSharpHelloWorld\bin\Debug\netcoreapp1.1\CSharpHelloWorld.runtimeconfig.json
+c:\Users\Del\Documents\Programming Codes\CSharp\CSharpHelloWorld\bin\Debug\netcoreapp1.1\CSharpHelloWorld.runtimeconfig.dev.json
+c:\Users\Del\Documents\Programming Codes\CSharp\CSharpHelloWorld\bin\Debug\netcoreapp1.1\CSharpHelloWorld.dll
+c:\Users\Del\Documents\Programming Codes\CSharp\CSharpHelloWorld\bin\Debug\netcoreapp1.1\CSharpHelloWorld.pdb
+c:\Users\Del\Documents\Programming Codes\CSharp\CSharpHelloWorld\obj\Debug\netcoreapp1.1\CSharpHelloWorld.AssemblyInfo.cs
+c:\Users\Del\Documents\Programming Codes\CSharp\CSharpHelloWorld\obj\Debug\netcoreapp1.1\CSharpHelloWorld.dll
+c:\Users\Del\Documents\Programming Codes\CSharp\CSharpHelloWorld\obj\Debug\netcoreapp1.1\CSharpHelloWorld.pdb
