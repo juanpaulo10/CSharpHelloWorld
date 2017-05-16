@@ -52,8 +52,8 @@ namespace CSharpHelloWorld
                     Console.WriteLine("LOL");
                     break;
             }
-            // Cute:
-            // Console.WriteLine("Toddlers are Cute");
+            Cute:
+            Console.WriteLine("Toddlers are Cute");
         }
     }
 }
