@@ -46,14 +46,12 @@ namespace CSharpHelloWorld
                 case 1:
                 case 2:
                     Console.WriteLine("Toddler");
-                    goto Cute; //goto statements can cause NIGHTMARES @_@
+                    break;
 
                 default:
                     Console.WriteLine("LOL");
                     break;
             }
-            Cute:
-            Console.WriteLine("Toddlers are Cute");
         }
     }
 }
