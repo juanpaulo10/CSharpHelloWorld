@@ -6,257 +6,223 @@ using System.Threading.Tasks;
 
 namespace CSharpHelloWorld
 {
-    class Program
+    //CLASSES AND OBJECTS
+    class Animal
     {
+        // properties and their automatic getters and setters
+        public double height { get; set; }
+        public double weight { get; set; }
+        public string sound { get; set; }
+
+        //creating own getters and setters
+        public string name;
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+
+        //constructor
+        public Animal()
+        {
+            this.height = 0;
+            this.weight = 0;
+            this.name = "No Name";
+            this.sound = "No Sound";
+            numOfAnimals++;
+        }
+
+        public Animal(double height, double weight, string name, string sound)
+        {
+            this.height = height;
+            this.weight = weight;
+            this.name = name;
+            this.sound = sound;
+            numOfAnimals++;
+        }
+
+        static int numOfAnimals = 0;
+
+        static int getNumOfAnimals()
+        {
+            return numOfAnimals;
+        }
+
+        public string introduce()
+        {
+            return String.Format("{0} is {1} inches tall, weighs {2} lbs and likes to say {3}", name, height, weight, sound);
+        }
+
+        public int getSum(int num1 = 1, int num2 = 1)
+        {
+            return num1 + num2;
+        }
+
+        public double getSum(double num1 = 1, double num2 = 1)
+        {
+            return num1 + num2;
+        }
+
         static void Main(string[] args)
         {
-            /*Console.WriteLine("Hello World!");
-            String name = Console.ReadLine();
-            Console.WriteLine("Hello: " + name);
+            //for classes examples
+            /*Animal Sando = new Animal (15, 10, "Sando", "woof");
+            Animal Tim = new Animal(5, 3, "Tim", "arf");
 
-            var newName = "myString";
-            Console.WriteLine("newName is a {0}", newName.GetType());*/
+            Console.WriteLine("{0} says {1}", Sando.name, Sando.sound);
+            Console.WriteLine("{0} says {1}", Tim.name, Tim.sound);
 
-            //arithmethics
-            /*int i = 0;
-            Console.WriteLine("i++ : " + i++);
-            Console.WriteLine("i++ : " + ++i);
+            Console.WriteLine("Number of animals created:" + Animal.getNumOfAnimals());
 
-            Random rand = new Random();
-            Console.WriteLine("Random num between 0 - 3 = " + (rand.Next(0,4)));*/
+            Console.WriteLine(Sando.introduce());
+            Console.WriteLine(Tim.introduce());
 
-            //Relation Operators: > < <= >= == !=
-            //Logical Operators : && || !
+            Console.WriteLine(Sando.getSum(num2: 1.3, num1: 2.6));
 
-            /*int age = 17;
-
-            if ( (age >= 5) && (age <= 7) )
+            Animal pichi = new Animal
             {
-                Console.WriteLine("Elementary School");
-            } else if ( (age > 7) && (age < 13) )
-            {
-                Console.WriteLine("Middle school");
-            } else{
-                Console.WriteLine("High school");
-            }
+                name = "pichi",
+                height = 16,
+                weight = 18,
+                sound = "ror"
+            };
 
-            bool canDrive = age >= 16 ? true : false;
+            Dog spike = new Dog();
+            Console.WriteLine(spike.introduce());
 
-            switch (age)
-            {
-                case 0: 
-                    Console.WriteLine("Infant");
-                    break;
-                case 1:
-                case 2:
-                    Console.WriteLine("Toddler");
-                    break;
-
-                default:
-                    Console.WriteLine("LOL");
-                    break;
-            }*/
-
-            // looping - while loop
-            /*int b = 0;
-
-            while ( b < 10 )
-            {
-                if ( b == 7 )
-                {
-                    b++;
-                    continue;
-                }
-
-                if ( b == 9 )
-                {
-                    break;
-                }
-
-                if ( (b % 2) > 0 )
-                {
-                    Console.WriteLine(b);
-                }
-
-                b++;
-            }*/
-
-            // looping - do while
-            /*string guess;
-
-            do
-            {
-                Console.WriteLine("Guess a Number: ");
-                guess = Console.ReadLine();
-
-            } while (! guess.Equals("15") );*/
-
-            // looping - for loop
-            /*for (int i = 0; i < 10; i++)
-            {
-                if ( (i % 2) == 0 )
-                {
-                    Console.WriteLine(i);
-                }
-            }*/
-
-            // looping - foreach
-            /*string randStr = "Here are dandom";
-
-            foreach (char c in randStr)
-            {
-                Console.WriteLine(c);
-            }*/
-
-            //string functions
-            /*string sampString = "A bunch of random words";
-
-            Console.WriteLine("is empty " + String.IsNullOrEmpty(sampString));
-            
-            Console.WriteLine("is empty " + String.IsNullOrWhiteSpace(sampString));
-
-            Console.WriteLine("String Length: " + sampString.Length);
-
-            Console.WriteLine("Index of bunch: " + sampString.IndexOf("bunch"));
-            int bunchStart = sampString.IndexOf("bunch");
-            int bunchEnd = sampString.IndexOf("bunch") + 4;
-            Console.WriteLine("2nd Word: " + sampString.Substring(bunchStart, bunchEnd));
-            string sampString2 = "Helloworld";
-
-            bool bStrEqual = sampString.Equals(sampString2);
-            Console.WriteLine("Strings Equal: " + bStrEqual);
-
-            Console.WriteLine("Starts with \"A bunch\": " + sampString.StartsWith("A bunch"));
-            
-            Console.WriteLine("Ends with words: " + sampString.EndsWith("words"));
-
-            //sampString = sampString.Trim(); //TrimEnd //TrimStart
-            sampString = sampString.Replace("words", "characters");
-            sampString = sampString.Remove(0, 2);
-
-            string[] names = new string[3] {"Paulo", "Daryl", "Joey"};
-
-            Console.WriteLine("Name List " + String.Join(", ", names));
-
-            //format string
-            string fmtString = String.Format("{0:c} {1:00.00} {2:#.00} {3:0,0}", 1.56, 15.568, .56, 1000);
-            Console.WriteLine(fmtString);*/
-
-            // string builder
-            /*StringBuilder sb = new StringBuilder();
-            sb.Append("This is the first sentence. ");
-            sb.AppendFormat("My name is {0} and I live in {1}", "Derek", "Pennsylvania");
-            //sb.Clear();
-            sb.Replace("a", "e");
-
-            sb.Remove(5, 7);
-
-            Console.WriteLine(sb.ToString());*/
-
-            //Arrays
-            /*int[] randNumArray;
-
-            int[] randArray = new int[5];
-
-            int[] randArray2 = { 1, 2, 3, 4, 5};
-
-            Console.WriteLine("Array length: " + randArray2.Length);
-            Console.WriteLine("Item 0: " + randArray2[0]);
-
-            for (int i = 0; i < randArray2.Length; i++)
-            {
-                Console.WriteLine("Item [{0}] is: {1}" ,i, randArray2[i]);
-            }
-
-            foreach (int num in randArray2)
-            {
-                Console.WriteLine(num);
-            }
-
-            Console.WriteLine("Where is 1: randArray2[{0}]", Array.IndexOf(randArray2, 1));
-
-            string[] names = {"Tom", "Paulo", "Sally"};
-
-            string nameStr = string.Join(",", names);
-
-            string[] nameArray = nameStr.Split(',');*/
-            
-            //multidimensional arrays
-            /*int[,] multiArray = new int[5, 3];
-            int[,] multArray2 = { {0, 7}, {2, 3}, {4, 5} };
-
-            foreach (int num in multArray2)
-            {
-                Console.WriteLine(num);
-            }
-            Console.WriteLine("Here----");
-            Console.WriteLine("{0} by {1} Array" , multArray2.GetLength(0), multArray2.GetLength(1));
-            for (int x = 0; x < multArray2.GetLength(0); x++)
-            {
-                for (int y = 0; y < multArray2.GetLength(1); y++)
-                {
-                    Console.WriteLine("{0} | {1}: {2}", x, y, multArray2[x, y]);
-                }
-            }*/
-
-            //List = similar to array but you can dynamically add elements.
-            /*List<int> numList = new List<int>();
-            numList.Add(5);
-            numList.Add(15);
-            numList.Add(25);
-
-            int[] randArray = {1, 2, 3, 4, 5};
-            numList.AddRange(randArray);
-
-            List<int> numList2 = new List<int>(randArray);
-            List<int> numList3 = new List<int>(new int[] {1, 2, 3, 4, 5});
-
-            numList.Insert(0, 10);
-            Console.WriteLine("Size is: " + numList.Count);
-            for (int i = 0; i < numList.Count; i++)
-            {
-                Console.WriteLine("Index[{0}] has value of: {1}", i, numList[i]);
-            }
-            numList.Remove(15); // Remove element which has 15(int value)
-            numList.RemoveAt(1); // Remove element at index 1
-
-            Console.WriteLine("numlist3 value:4 is at index:" + numList3.IndexOf(4));
-            Console.WriteLine("numlist3 has 5? " + numList3.Contains(5));
-            
-            List<string> strList = new List<string>(new string[] {"Tom", "Paul"});
-
-            Console.WriteLine("Tom in strList " + strList.Contains("tom", StringComparer.OrdinalIgnoreCase));
-
-            strList.Sort();
-            Console.WriteLine(strList.ToString());
-            foreach (String str in strList)
-            {
-                Console.WriteLine(str);
-            }*/
-
-            // Exceptions
-
-            /*try
-            {
-                Console.Write("Divide 10 by 0");
-                int num = int.Parse(Console.ReadLine());
-                Console.WriteLine("10 / {0} = {1}", num, (10/num));
-            }
-            catch (DivideByZeroException ex)
-            {
-                Console.WriteLine("Can't divide by zero");
-                Console.WriteLine(ex.GetType().Name);
-                Console.WriteLine(ex.Message);
-                //throw ex;
-                //throw new InvalidOperationException("Operation Failed", ex);
-            }
-            catch(Exception ex)
-            {
-                Console.WriteLine(ex.GetType().Name);
-                Console.WriteLine(ex.Message);
-            }*/
+            spike = new Dog(20, 15, "Spike", "arfu arf", "burger");
+            Console.WriteLine(spike.introduce());*/
 
             
+
+            //for polymorphism/inheritance - abstract/interfaces
+            /*Shape rect = new Rectangle(5, 5);
+            Shape tri = new Triangle(5, 5);
+
+            Console.WriteLine("Rect Area " + rect.area());
+            Console.WriteLine("Tri Area " + tri.area());
+
+            Rectangle combineRect = new Rectangle(5, 6) + new Rectangle(5, 8);
+            Console.WriteLine("combineRect Area " + combineRect.area());*/
+
+
+
+            //for Generics
+            KeyValue<string, string> superman = new KeyValue<string, string>("", "");
+            superman.key = "Superman";
+            superman.value = "Clark Kent";
+
+            KeyValue<int, string> samsungTV = new KeyValue<int, string>(0, "");
+            samsungTV.key = 11134771;
+            samsungTV.value = "a 50 inch Samsung TV";
+
+            superman.showData();
+            samsungTV.showData();
         }
     }
+
+    class Dog : Animal
+    {
+        //properties
+        public string favFood { get; set; }
+
+        //calls super class 
+        public Dog() : base()
+        {
+            this.favFood = "No Fave Food";
+        }
+
+        public Dog (double height, double weight, string name, string sound, string favFood) : base(height, weight, name, sound)
+        {
+            this.favFood = favFood;
+        }
+
+        //overriding in c# has keyword "new"
+        new public string introduce()
+        {
+            return String.Format("{0} is {1} inches tall, weighs {2} lbs and likes to say {3} and eats {4}", name, height, weight, sound, favFood);
+        }
+    }
+
+    //abstract methods are methods that should be defined by a class
+    //ONE abstract class can only be inherited by a class
+    abstract class Shape
+    {
+        public abstract double area();
+
+        public void sayHi()
+        {
+            Console.WriteLine("Hello");
+        }
+    }
+
+    //every method of an interface is an abstract method
+    public interface ShapeItem
+    {
+        double area();
+    }
+
+    class Rectangle : Shape
+    {
+        private double length;
+        private double width;
+
+        //constructor
+        public Rectangle(double num1, double num2)
+        {
+            length = num1;
+            width = num2;
+        }
+
+        public override double area()
+        {
+            return length * width;
+        }
+
+        //operator overloading - example: adding rectangle together
+        public static Rectangle operator+ (Rectangle rect1, Rectangle rect2)
+        {
+            double rectLength = rect1.length + rect2.length;
+            double rectWidth = rect1.width + rect2.width;
+
+            return new Rectangle(rectLength, rectWidth);
+        }
+    }
+
+    class Triangle : Shape
+    {
+        private double triangleBase;
+        private double height;
+
+        //constructor
+        public Triangle(double num1, double num2)
+        {
+            triangleBase = num1;
+            height = num2;
+        }
+
+        public override double area()
+        {
+            return .5 * (triangleBase * height);
+        }
+    }
+
+    //Generic
+    class KeyValue<TKey, TValue>
+    {
+        public TKey key { get; set; }
+        public TValue value { get; set; }
+
+        public KeyValue(TKey k, TValue v)
+        {
+            key = k;
+            value = v;
+        }
+
+        public void showData()
+        {
+            Console.WriteLine("{0} is {1} ", this.key, this.value);
+        }
+    }
+
 }
